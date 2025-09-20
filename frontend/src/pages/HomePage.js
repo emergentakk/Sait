@@ -179,12 +179,12 @@ const HomePage = () => {
             {services.map((service, index) => {
               const Icon = iconMap[service.icon];
               return (
-                <Card key={service.id} className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <Card key={service.id} className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 group bg-slate-800/50 border-slate-700">
                   <CardContent className="pt-8">
-                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-gradient-to-r from-rose-600 to-rose-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    <h3 className="text-xl font-semibold text-slate-100 mb-3">
                       {language === 'ru' ? service.title : 
                         service.title === 'Поиск автомобиля' ? 'Car Search' :
                         service.title === 'Проверка состояния' ? 'Condition Check' :
