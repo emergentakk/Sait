@@ -88,13 +88,13 @@ const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge variant="secondary" className="w-fit">
+                <Badge variant="secondary" className="w-fit bg-slate-700/50 text-rose-200 border-slate-600">
                   BM Motors - {language === 'ru' ? 'Ваш надежный партнер' : 'Your reliable partner'}
                 </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-4xl md:text-6xl font-bold text-slate-100 leading-tight">
                   {t('hero.title')}
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-slate-300 leading-relaxed">
                   {t('hero.subtitle')}
                 </p>
               </div>
