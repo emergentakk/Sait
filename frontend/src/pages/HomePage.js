@@ -294,6 +294,121 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Location & Map Section */}
+      <section className="py-20 bg-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Company Info */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
+                  {language === 'ru' ? 'Наше местоположение' : 'Our Location'}
+                </h2>
+                <p className="text-xl text-slate-300 mb-6">
+                  {language === 'ru' 
+                    ? 'Посетите наш офис в центре Смоленска'
+                    : 'Visit our office in the center of Smolensk'
+                  }
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <Card className="bg-slate-700/30 border-slate-600 p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-rose-600 p-3 rounded-lg">
+                      <MapPin className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-100 mb-2">
+                        {language === 'ru' ? 'Адрес' : 'Address'}
+                      </h3>
+                      <p className="text-slate-300 text-sm">
+                        214000, {language === 'ru' ? 'Смоленск' : 'Smolensk'}<br />
+                        {language === 'ru' ? 'ул. Большая Советская' : 'Bolshaya Sovetskaya St.'}<br />
+                        16/17, {language === 'ru' ? 'офис' : 'office'} K 37
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="bg-slate-700/30 border-slate-600 p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-rose-600 p-3 rounded-lg">
+                      <Phone className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-100 mb-2">
+                        {language === 'ru' ? 'Контакты' : 'Contact'}
+                      </h3>
+                      <p className="text-slate-300 text-sm">
+                        +7 (4812) 123-456<br />
+                        info@bm-motors.ru
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild className="bg-rose-600 hover:bg-rose-700 text-white">
+                  <Link to="/contact">
+                    {language === 'ru' ? 'Связаться с нами' : 'Contact Us'}
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="border-slate-600 text-slate-200 hover:bg-slate-700/50"
+                  onClick={() => window.open('https://yandex.ru/maps/?text=214000+Смоленск+Большая+Советская+16/17', '_blank')}
+                >
+                  <MapPin className="mr-2 h-4 w-4" />
+                  {language === 'ru' ? 'Открыть в Яндекс.Картах' : 'Open in Yandex Maps'}
+                </Button>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div className="relative">
+              <Card className="overflow-hidden border-0 shadow-2xl bg-slate-700 border-slate-600">
+                <div className="h-96 relative">
+                  {/* Yandex Maps embed for Smolensk */}
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab2c4fc8b5e2f8a6ae8c4b6f7d9e3c2a1&amp;source=constructor&amp;width=100%25&amp;height=384&amp;lang=ru_RU&amp;scroll=false"
+                    width="100%"
+                    height="384"
+                    frameBorder="0"
+                    title="BM Motors - Смоленск, ул. Большая Советская 16/17"
+                    className="absolute inset-0 rounded-lg"
+                  ></iframe>
+                  
+                  {/* Map overlay with logo */}
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-lg">
+                    <img 
+                      src="https://customer-assets.emergentagent.com/job_eurocars-russia/artifacts/hk5yb2tm_ChatGPT_Image_20_%D1%81%D0%B5%D0%BD%D1%82._2025_%D0%B3.__09_07_03-removebg-preview.png"
+                      alt="BM Motors" 
+                      className="h-8 w-auto"
+                    />
+                  </div>
+                  
+                  {/* Fallback content */}
+                  <div className="absolute inset-0 bg-slate-600 flex items-center justify-center rounded-lg" style={{zIndex: -1}}>
+                    <div className="text-center p-8">
+                      <MapPin className="h-12 w-12 text-rose-400 mx-auto mb-4" />
+                      <h3 className="text-lg font-semibold text-slate-100 mb-2">
+                        BM Motors
+                      </h3>
+                      <p className="text-slate-300 mb-4">
+                        214000, {language === 'ru' ? 'Смоленск' : 'Smolensk'}<br />
+                        {language === 'ru' ? 'ул. Большая Советская' : 'Bolshaya Sovetskaya St.'}, 16/17
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
