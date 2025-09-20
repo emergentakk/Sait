@@ -5,6 +5,7 @@ import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { requestsApi } from '../api/api';
 
 const ContactPage = () => {
   const { t, language } = useLanguage();
