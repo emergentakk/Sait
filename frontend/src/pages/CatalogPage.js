@@ -61,7 +61,7 @@ const CatalogPage = () => {
 
   const clearFilters = () => {
     setFilters({
-      brand: '',
+      brand: 'all',
       priceMin: '',
       priceMax: '',
       yearMin: '',
