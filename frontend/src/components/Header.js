@@ -52,7 +52,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="flex items-center space-x-1 hover:bg-blue-50"
+              className="flex items-center space-x-1 hover:bg-slate-700/50 text-slate-200"
             >
               <Globe className="h-4 w-4" />
               <span className="font-medium">{language.toUpperCase()}</span>
@@ -62,7 +62,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="md:hidden text-slate-200 hover:bg-slate-700/50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
