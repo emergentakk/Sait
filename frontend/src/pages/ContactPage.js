@@ -268,11 +268,11 @@ const ContactPage = () => {
               <div className="h-96 relative">
                 {/* Yandex Maps embed with actual Smolensk coordinates */}
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab2c4fc8b5e2f8a6ae8c4b6f7d9e3c2a1&amp;source=constructor&amp;width=100%25&amp;height=384&amp;lang=ru_RU"
+                  src="https://yandex.ru/map-widget/v1/?text=214000%20Смоленск%20Большая%20Советская%2016%2F17&amp;z=17&amp;l=map&amp;size=450,400&amp;pt=32.045287,54.782635,pmwtm1~32.045287,54.782635,pmwtm99&amp;lang=ru_RU"
                   width="100%"
                   height="384"
                   frameBorder="0"
-                  title="BM Motors - Smolensk, Bolshaya Sovetskaya 16/17"
+                  title="BM Motors - 214000, Смоленск, ул. Большая Советская 16/17, офис K 37"
                   className="absolute inset-0"
                 ></iframe>
                 
