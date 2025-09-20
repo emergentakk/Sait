@@ -113,10 +113,10 @@ const HomePage = () => {
             </div>
             
             {/* Request Form */}
-            <Card className="shadow-2xl border-0 bg-white/90 backdrop-blur-sm">
+            <Card className="shadow-2xl border-0 bg-slate-800/90 backdrop-blur-sm border-slate-600">
               <CardHeader>
-                <CardTitle className="text-2xl">{t('contact.form.title')}</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-2xl text-slate-100">{t('contact.form.title')}</CardTitle>
+                <CardDescription className="text-slate-300">
                   {language === 'ru' 
                     ? 'Оставьте заявку и мы подберем автомобиль для вас' 
                     : 'Leave a request and we will find a car for you'
@@ -131,7 +131,7 @@ const HomePage = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+                    className="transition-all duration-200 focus:ring-2 focus:ring-rose-500 bg-slate-700/50 border-slate-600 text-slate-100 placeholder-slate-400"
                   />
                   <Input
                     name="phone"
@@ -140,7 +140,7 @@ const HomePage = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+                    className="transition-all duration-200 focus:ring-2 focus:ring-rose-500 bg-slate-700/50 border-slate-600 text-slate-100 placeholder-slate-400"
                   />
                   <Textarea
                     name="message"
@@ -148,9 +148,9 @@ const HomePage = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={3}
-                    className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+                    className="transition-all duration-200 focus:ring-2 focus:ring-rose-500 bg-slate-700/50 border-slate-600 text-slate-100 placeholder-slate-400"
                   />
-                  <Button type="submit" className="w-full" disabled={loading}>
+                  <Button type="submit" className="w-full bg-rose-600 hover:bg-rose-700 text-white" disabled={loading}>
                     {loading ? 'Отправка...' : t('contact.form.submit')}
                   </Button>
                 </form>
