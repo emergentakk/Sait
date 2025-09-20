@@ -233,8 +233,16 @@ const CatalogPage = () => {
             </div>
 
             {/* Cars Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {filteredAndSortedCars.map((car) => (
+            {loading ? (
+              <div className="flex items-center justify-center py-12">
+                <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+                <span className="ml-2 text-gray-600">
+                  {language === 'ru' ? 'Загрузка автомобилей...' : 'Loading cars...'}
+                </span>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {filteredAndSortedCars.map((car) => (
                 <Card key={car.id} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
                   <div className="relative overflow-hidden">
                     <img
