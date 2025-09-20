@@ -266,27 +266,27 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
               {language === 'ru' ? 'Отзывы клиентов' : 'Customer Reviews'}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="border-0 shadow-lg">
+              <Card key={testimonial.id} className="border-0 shadow-lg bg-slate-800/50 border-slate-700">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="h-5 w-5 text-rose-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
-                  <div className="border-t pt-4">
-                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600">{testimonial.city}</p>
+                  <p className="text-slate-300 mb-4 italic">"{testimonial.text}"</p>
+                  <div className="border-t border-slate-600 pt-4">
+                    <p className="font-semibold text-slate-100">{testimonial.name}</p>
+                    <p className="text-sm text-slate-400">{testimonial.city}</p>
                   </div>
                 </CardContent>
               </Card>
