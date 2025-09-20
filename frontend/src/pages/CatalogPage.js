@@ -316,9 +316,10 @@ const CatalogPage = () => {
                   </CardContent>
                 </Card>
               ))}
-            </div>
+              </div>
+            )}
 
-            {filteredAndSortedCars.length === 0 && (
+            {!loading && filteredAndSortedCars.length === 0 && (
               <div className="text-center py-12">
                 <div className="text-gray-500 mb-4">
                   <Filter className="h-12 w-12 mx-auto mb-4 opacity-50" />
