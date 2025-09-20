@@ -15,6 +15,7 @@ const ContactPage = () => {
     email: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -23,14 +24,31 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
-    alert(language === 'ru' 
-      ? 'Сообщение отправлено! Мы свяжемся с вами в ближайшее время.' 
-      : 'Message sent! We will contact you soon.'
-    );
-    setFormData({ name: '', phone: '', email: '', message: '' });
+    setLoading(true);
+    
+    try {
+      await requestsApi.create({
+        ...formData,
+        type: 'general'
+      });
+      
+      alert(language === 'ru' 
+        ? 'Сообщение отправлено! Мы свяжемся с вами в ближайшее время.' 
+        : 'Message sent! We will contact you soon.'
+      );
+      
+      setFormData({ name: '', phone: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      alert(language === 'ru'
+        ? 'Ошибка при отправке сообщения. Попробуйте позже.'
+        : 'Error sending message. Please try again later.'
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
