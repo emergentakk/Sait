@@ -99,13 +99,13 @@ const HomePage = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="group">
+                <Button asChild size="lg" className="group bg-rose-600 hover:bg-rose-700 text-white">
                   <Link to="/catalog">
                     {t('hero.cta')}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="group">
+                <Button variant="outline" size="lg" className="group border-slate-600 text-slate-200 hover:bg-slate-700/50">
                   <Phone className="mr-2 h-4 w-4" />
                   +7 (4812) 123-456
                 </Button>
