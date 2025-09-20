@@ -17,6 +17,26 @@ const HomePage = () => {
     phone: '',
     message: ''
   });
+  const [featuredCars, setFeaturedCars] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // Initialize database and fetch featured cars
+  useEffect(() => {
+    const initializeData = async () => {
+      try {
+        // Seed database if needed
+        await seedDatabase();
+        
+        // Fetch cars for featured section
+        const cars = await carsApi.getAll();
+        setFeaturedCars(cars.slice(0, 3));
+      } catch (error) {
+        console.error('Error initializing data:', error);
+      }
+    };
+
+    initializeData();
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -25,12 +45,31 @@ const HomePage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Mock form submission
-    alert(language === 'ru' ? 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.' : 'Request sent! We will contact you soon.');
-    setFormData({ name: '', phone: '', message: '' });
+    setLoading(true);
+    
+    try {
+      await requestsApi.create({
+        ...formData,
+        type: 'general'
+      });
+      
+      alert(language === 'ru' 
+        ? 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.' 
+        : 'Request sent! We will contact you soon.'
+      );
+      
+      setFormData({ name: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting request:', error);
+      alert(language === 'ru'
+        ? 'Ошибка при отправке заявки. Попробуйте позже.'
+        : 'Error submitting request. Please try again later.'
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const iconMap = {
