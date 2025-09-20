@@ -265,37 +265,60 @@ const ContactPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="h-96 bg-gray-200 flex items-center justify-center relative">
-                {/* Yandex Maps embed */}
+              <div className="h-96 relative">
+                {/* Yandex Maps embed with proper coordinates for Smolensk address */}
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A5dc8e4c20b8b1c8b6f7e9c5c8b1c8b1c&amp;source=constructor"
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A40a7b7c7b3e27ad04c2d11c6f39b0a9b6d3c2e8f&amp;source=constructor&amp;width=100%25&amp;height=384&amp;lang=ru_RU&amp;scroll=true"
                   width="100%"
                   height="384"
                   frameBorder="0"
-                  title="BM Motors Location"
+                  title="BM Motors Location - Smolensk"
                   className="absolute inset-0"
                 ></iframe>
                 
-                {/* Fallback content */}
-                <div className="bg-white p-8 rounded-lg shadow-lg z-10">
-                  <MapPin className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                    BM Motors
-                  </h3>
-                  <p className="text-gray-600 text-center mb-4">
+                {/* Map overlay with business info */}
+                <div className="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-lg max-w-xs z-10">
+                  <div className="flex items-center mb-2">
+                    <img 
+                      src="https://customer-assets.emergentagent.com/job_eurocars-russia/artifacts/mf71l7kt_1797832c389387b90898cf8403999129.jfif"
+                      alt="BM Motors" 
+                      className="h-6 w-auto mr-2"
+                    />
+                    <h3 className="text-sm font-semibold text-gray-900">BM Motors</h3>
+                  </div>
+                  <p className="text-xs text-gray-600 mb-2">
                     214000, {language === 'ru' ? 'Смоленск' : 'Smolensk'}<br />
                     {language === 'ru' ? 'ул. Большая Советская' : 'Bolshaya Sovetskaya St.'}, 16/17<br />
                     {language === 'ru' ? 'офис' : 'office'} K 37
                   </p>
-                  <Button asChild className="w-full">
-                    <a 
-                      href="https://yandex.ru/maps/?text=214000+Смоленск+Большая+Советская+16/17"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {language === 'ru' ? 'Открыть на Яндекс.Картах' : 'Open in Yandex Maps'}
-                    </a>
-                  </Button>
+                  <div className="text-xs text-gray-600">
+                    <div>{language === 'ru' ? 'Тел:' : 'Phone:'} +7 (4812) 123-456</div>
+                    <div>Email: info@bm-motors.ru</div>
+                  </div>
+                </div>
+                
+                {/* Fallback content if iframe doesn't load */}
+                <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{zIndex: -1}}>
+                  <div className="text-center p-8">
+                    <MapPin className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      BM Motors
+                    </h3>
+                    <p className="text-gray-600 mb-4">
+                      214000, {language === 'ru' ? 'Смоленск' : 'Smolensk'}<br />
+                      {language === 'ru' ? 'ул. Большая Советская' : 'Bolshaya Sovetskaya St.'}, 16/17<br />
+                      {language === 'ru' ? 'офис' : 'office'} K 37
+                    </p>
+                    <Button asChild>
+                      <a 
+                        href="https://yandex.ru/maps/?text=214000+Смоленск+Большая+Советская+16/17"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {language === 'ru' ? 'Открыть на Яндекс.Картах' : 'Open in Yandex Maps'}
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </CardContent>
