@@ -192,7 +192,7 @@ const HomePage = () => {
                         service.title === 'Доставка' ? 'Delivery' : service.title
                       }
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-slate-300">
                       {language === 'ru' ? service.description :
                         service.description === 'Найдем автомобиль вашей мечты на европейских аукционах и у дилеров' ? 'Find your dream car at European auctions and dealers' :
                         service.description === 'Полная техническая диагностика и проверка истории автомобиля' ? 'Complete technical diagnostics and vehicle history check' :
