@@ -233,9 +233,9 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                    <Button type="submit" size="lg" className="flex-1 group">
+                    <Button type="submit" size="lg" className="flex-1 group" disabled={loading}>
                       <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      {t('contact.form.submit')}
+                      {loading ? (language === 'ru' ? 'Отправка...' : 'Sending...') : t('contact.form.submit')}
                     </Button>
                     <Button 
                       type="button" 
