@@ -11,7 +11,7 @@ import { mockCars, carBrands } from '../mock';
 const CatalogPage = () => {
   const { t, language } = useLanguage();
   const [filters, setFilters] = useState({
-    brand: '',
+    brand: 'all',
     priceMin: '',
     priceMax: '',
     yearMin: '',
