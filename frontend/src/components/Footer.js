@@ -4,7 +4,7 @@ import { Car, Phone, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="bg-gray-900 text-white">
