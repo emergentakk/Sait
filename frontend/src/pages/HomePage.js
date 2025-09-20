@@ -359,7 +359,7 @@ const HomePage = () => {
                 <Button 
                   variant="outline" 
                   className="border-slate-600 text-slate-200 hover:bg-slate-700/50"
-                  onClick={() => window.open('https://yandex.ru/maps/?text=214000+Смоленск+Большая+Советская+16/17', '_blank')}
+                  onClick={() => window.open('https://yandex.ru/maps/?text=214000%20Смоленск%20Большая%20Советская%2016%2F17', '_blank')}
                 >
                   <MapPin className="mr-2 h-4 w-4" />
                   {language === 'ru' ? 'Открыть в Яндекс.Картах' : 'Open in Yandex Maps'}
