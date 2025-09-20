@@ -209,20 +209,20 @@ const HomePage = () => {
       </section>
 
       {/* Featured Cars */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
               {language === 'ru' ? 'Рекомендуемые автомобили' : 'Featured Cars'}
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-slate-300">
               {language === 'ru' ? 'Популярные модели в наличии' : 'Popular models in stock'}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {featuredCars.map((car) => (
-              <Card key={car.id} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <Card key={car.id} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 group bg-slate-700/30 border-slate-600">
                 <div className="aspect-w-16 aspect-h-10 overflow-hidden">
                   <img
                     src={car.image}
@@ -232,19 +232,19 @@ const HomePage = () => {
                 </div>
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-slate-100">
                       {car.brand} {car.model}
                     </h3>
-                    <Badge variant="secondary">{car.year}</Badge>
+                    <Badge variant="secondary" className="bg-slate-600/50 text-rose-200 border-slate-500">{car.year}</Badge>
                   </div>
-                  <p className="text-2xl font-bold text-blue-600 mb-3">
+                  <p className="text-2xl font-bold text-rose-400 mb-3">
                     {car.price.toLocaleString()} {t('catalog.rub')}
                   </p>
-                  <div className="text-sm text-gray-600 space-y-1 mb-4">
+                  <div className="text-sm text-slate-300 space-y-1 mb-4">
                     <p>{car.mileage.toLocaleString()} км • {car.fuel} • {car.transmission}</p>
-                    <p className="text-gray-800">{car.description}</p>
+                    <p className="text-slate-200">{car.description}</p>
                   </div>
-                  <Button asChild className="w-full">
+                  <Button asChild className="w-full bg-rose-600 hover:bg-rose-700 text-white">
                     <Link to="/catalog">
                       {language === 'ru' ? 'Подробнее' : 'Learn More'}
                     </Link>
@@ -255,7 +255,7 @@ const HomePage = () => {
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="border-slate-600 text-slate-200 hover:bg-slate-700/50">
               <Link to="/catalog">
                 {language === 'ru' ? 'Посмотреть все автомобили' : 'View All Cars'}
                 <ArrowRight className="ml-2 h-4 w-4" />
