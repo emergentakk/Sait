@@ -150,8 +150,8 @@ const HomePage = () => {
                     rows={3}
                     className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
                   />
-                  <Button type="submit" className="w-full">
-                    {t('contact.form.submit')}
+                  <Button type="submit" className="w-full" disabled={loading}>
+                    {loading ? 'Отправка...' : t('contact.form.submit')}
                   </Button>
                 </form>
               </CardContent>
