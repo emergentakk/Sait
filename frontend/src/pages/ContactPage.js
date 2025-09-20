@@ -280,9 +280,9 @@ const ContactPage = () => {
                 <div className="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-lg max-w-xs z-10">
                   <div className="flex items-center mb-2">
                     <img 
-                      src="https://customer-assets.emergentagent.com/job_eurocars-russia/artifacts/mf71l7kt_1797832c389387b90898cf8403999129.jfif"
+                      src="https://customer-assets.emergentagent.com/job_eurocars-russia/artifacts/hk5yb2tm_ChatGPT_Image_20_%D1%81%D0%B5%D0%BD%D1%82._2025_%D0%B3.__09_07_03-removebg-preview.png"
                       alt="BM Motors" 
-                      className="h-6 w-auto mr-2"
+                      className="h-8 w-auto mr-2"
                     />
                     <h3 className="text-sm font-semibold text-gray-900">BM Motors</h3>
                   </div>
