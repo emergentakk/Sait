@@ -72,7 +72,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-slate-600">
             <nav className="flex flex-col space-y-2">
               {navigation.map((item) => (
                 <Link
@@ -80,8 +80,8 @@ const Header = () => {
                   to={item.href}
                   className={`px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                     location.pathname === item.href
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-rose-300 bg-slate-700/50'
+                      : 'text-slate-200 hover:text-rose-300 hover:bg-slate-700/30'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
