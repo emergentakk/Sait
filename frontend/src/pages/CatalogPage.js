@@ -20,17 +20,31 @@ const CatalogPage = () => {
   });
   const [sortBy, setSortBy] = useState('price-asc');
   const [selectedCar, setSelectedCar] = useState(null);
+  const [cars, setCars] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch cars from API
+  useEffect(() => {
+    const fetchCars = async () => {
+      try {
+        setLoading(true);
+        const carsData = await carsApi.getAll(filters);
+        setCars(carsData);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching cars:', err);
+        setError('Failed to load cars');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCars();
+  }, [filters]);
 
   const filteredAndSortedCars = useMemo(() => {
-    let filtered = mockCars.filter(car => {
-      const matchesBrand = !filters.brand || filters.brand === 'all' || car.brand === filters.brand;
-      const matchesPriceMin = !filters.priceMin || car.price >= parseInt(filters.priceMin);
-      const matchesPriceMax = !filters.priceMax || car.price <= parseInt(filters.priceMax);
-      const matchesYearMin = !filters.yearMin || car.year >= parseInt(filters.yearMin);
-      const matchesYearMax = !filters.yearMax || car.year <= parseInt(filters.yearMax);
-      
-      return matchesBrand && matchesPriceMin && matchesPriceMax && matchesYearMin && matchesYearMax;
-    });
+    let filtered = [...cars];
 
     // Sort cars
     filtered.sort((a, b) => {
@@ -51,7 +65,7 @@ const CatalogPage = () => {
     });
 
     return filtered;
-  }, [filters, sortBy]);
+  }, [cars, sortBy]);
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({
