@@ -19,10 +19,10 @@ const Footer = () => {
                 className="h-12 w-auto"
               />
             </div>
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-slate-300 mb-4 leading-relaxed">
               {t('about.description')}
             </p>
-            <div className="space-y-2 text-sm text-gray-300">
+            <div className="space-y-2 text-sm text-slate-300">
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
                 <span>214000, {language === 'ru' ? 'Смоленск' : 'Smolensk'}, {language === 'ru' ? 'ул. Большая Советская' : 'Bolshaya Sovetskaya St.'}, 16/17, {language === 'ru' ? 'офис' : 'office'} K 37</span>
