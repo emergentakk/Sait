@@ -111,7 +111,7 @@ const CatalogPage = () => {
                         <SelectValue placeholder={language === 'ru' ? 'Выберите марку' : 'Select brand'} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">{language === 'ru' ? 'Все марки' : 'All brands'}</SelectItem>
+                        <SelectItem value="all">{language === 'ru' ? 'Все марки' : 'All brands'}</SelectItem>
                         {Object.entries(carBrands).map(([key, value]) => (
                           <SelectItem key={key} value={value}>{value}</SelectItem>
                         ))}
