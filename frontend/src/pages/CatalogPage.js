@@ -22,7 +22,7 @@ const CatalogPage = () => {
 
   const filteredAndSortedCars = useMemo(() => {
     let filtered = mockCars.filter(car => {
-      const matchesBrand = !filters.brand || car.brand === filters.brand;
+      const matchesBrand = !filters.brand || filters.brand === 'all' || car.brand === filters.brand;
       const matchesPriceMin = !filters.priceMin || car.price >= parseInt(filters.priceMin);
       const matchesPriceMax = !filters.priceMax || car.price <= parseInt(filters.priceMax);
       const matchesYearMin = !filters.yearMin || car.year >= parseInt(filters.yearMin);
