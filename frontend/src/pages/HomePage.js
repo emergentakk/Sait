@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -7,7 +7,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { Badge } from '../components/ui/badge';
 import { Search, Shield, FileText, Truck, Star, ArrowRight, Phone } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import { mockCars, testimonials, services } from '../mock';
+import { testimonials, services } from '../mock';
+import { carsApi, requestsApi, seedDatabase } from '../api/api';
 
 const HomePage = () => {
   const { t, language } = useLanguage();
