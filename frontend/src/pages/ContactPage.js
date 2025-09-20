@@ -266,13 +266,13 @@ const ContactPage = () => {
             </CardHeader>
             <CardContent className="p-0">
               <div className="h-96 relative">
-                {/* Yandex Maps embed with proper coordinates for Smolensk address */}
+                {/* Yandex Maps embed with actual Smolensk coordinates */}
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A40a7b7c7b3e27ad04c2d11c6f39b0a9b6d3c2e8f&amp;source=constructor&amp;width=100%25&amp;height=384&amp;lang=ru_RU&amp;scroll=true"
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab2c4fc8b5e2f8a6ae8c4b6f7d9e3c2a1&amp;source=constructor&amp;width=100%25&amp;height=384&amp;lang=ru_RU"
                   width="100%"
                   height="384"
                   frameBorder="0"
-                  title="BM Motors Location - Smolensk"
+                  title="BM Motors - Smolensk, Bolshaya Sovetskaya 16/17"
                   className="absolute inset-0"
                 ></iframe>
                 
