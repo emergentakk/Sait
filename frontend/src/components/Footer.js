@@ -40,19 +40,19 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{language === 'ru' ? 'Навигация' : 'Navigation'}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-slate-100">{language === 'ru' ? 'Навигация' : 'Navigation'}</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">{t('nav.home')}</Link></li>
-              <li><Link to="/catalog" className="text-gray-300 hover:text-white transition-colors">{t('nav.catalog')}</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">{t('nav.about')}</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">{t('nav.contact')}</Link></li>
+              <li><Link to="/" className="text-slate-300 hover:text-rose-300 transition-colors">{t('nav.home')}</Link></li>
+              <li><Link to="/catalog" className="text-slate-300 hover:text-rose-300 transition-colors">{t('nav.catalog')}</Link></li>
+              <li><Link to="/about" className="text-slate-300 hover:text-rose-300 transition-colors">{t('nav.about')}</Link></li>
+              <li><Link to="/contact" className="text-slate-300 hover:text-rose-300 transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{language === 'ru' ? 'Услуги' : 'Services'}</h3>
-            <ul className="space-y-2 text-gray-300">
+            <h3 className="text-lg font-semibold mb-4 text-slate-100">{language === 'ru' ? 'Услуги' : 'Services'}</h3>
+            <ul className="space-y-2 text-slate-300">
               <li>{language === 'ru' ? 'Поиск автомобилей' : 'Car search'}</li>
               <li>{language === 'ru' ? 'Техническая проверка' : 'Technical inspection'}</li>
               <li>{language === 'ru' ? 'Растаможка' : 'Customs clearance'}</li>
