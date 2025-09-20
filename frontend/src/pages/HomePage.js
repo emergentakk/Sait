@@ -73,13 +73,6 @@ const HomePage = () => {
   };
 
   const iconMap = {
-    Search,
-    Shield,
-    FileText,
-    Truck
-  };
-
-  const featuredCars = mockCars.slice(0, 3);
 
   return (
     <div className="min-h-screen">
