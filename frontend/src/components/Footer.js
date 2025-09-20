@@ -12,13 +12,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="flex items-center mb-4">
               <img 
                 src="https://customer-assets.emergentagent.com/job_eurocars-russia/artifacts/mf71l7kt_1797832c389387b90898cf8403999129.jfif"
                 alt="BM Motors" 
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
-              <span className="text-xl font-bold">BM Motors</span>
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed">
               {t('about.description')}
