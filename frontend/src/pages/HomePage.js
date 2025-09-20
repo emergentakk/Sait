@@ -5,7 +5,7 @@ import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Search, Shield, FileText, Truck, Star, ArrowRight, Phone } from 'lucide-react';
+import { Search, Shield, FileText, Truck, Star, ArrowRight, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { testimonials, services } from '../mock';
 import { carsApi, requestsApi, seedDatabase } from '../api/api';
