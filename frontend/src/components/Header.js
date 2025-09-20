@@ -22,9 +22,11 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg group-hover:shadow-lg transition-all duration-300">
-              <Car className="h-6 w-6 text-white" />
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_eurocars-russia/artifacts/mf71l7kt_1797832c389387b90898cf8403999129.jfif"
+              alt="BM Motors" 
+              className="h-8 w-auto"
+            />
             <span className="text-xl font-bold text-gray-900">BM Motors</span>
           </Link>
 
