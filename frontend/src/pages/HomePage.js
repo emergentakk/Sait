@@ -73,6 +73,11 @@ const HomePage = () => {
   };
 
   const iconMap = {
+    Search,
+    Shield,
+    FileText,
+    Truck
+  };
 
   return (
     <div className="min-h-screen">
